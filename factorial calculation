@@ -1,19 +1,23 @@
+Adm:EB3/50346/20
+Name:Peter Waweru
 
-# Factorial Calculation Program in C#
 
-This C# program calculates the factorial of a user-defined input.
 using System;
+using System.Diagnostics;
 
-class Program {
+class FactorialProgram {
     static void Main() {
         Console.Write("Enter a number: ");
         int num = int.Parse(Console.ReadLine());
         long factorial = 1;
 
+        Stopwatch stopwatch = Stopwatch.StartNew(); 
         for (int i = 1; i <= num; i++) {
             factorial *= i;
         }
+        stopwatch.Stop();
 
         Console.WriteLine($"Factorial of {num} is {factorial}");
+        Console.WriteLine($"Execution Time: {stopwatch.ElapsedMilliseconds} ms");
     }
 }
