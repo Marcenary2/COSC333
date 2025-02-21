@@ -1,11 +1,17 @@
-using System;
+Adm:EB3/50346/20
+Name:Peter Waweru
 
-class Program {
+
+using System;
+using System.Diagnostics;
+
+class FibonacciProgram {
     static void Main() {
         Console.Write("Enter the number of terms: ");
         int n = int.Parse(Console.ReadLine());
         int a = 0, b = 1, c;
 
+        Stopwatch stopwatch = Stopwatch.StartNew();
         Console.WriteLine("Fibonacci Sequence:");
         for (int i = 0; i < n; i++) {
             Console.Write(a + " ");
@@ -13,5 +19,8 @@ class Program {
             a = b;
             b = c;
         }
+        stopwatch.Stop();
+
+        Console.WriteLine("\nExecution Time: " + stopwatch.ElapsedMilliseconds + " ms");
     }
 }
